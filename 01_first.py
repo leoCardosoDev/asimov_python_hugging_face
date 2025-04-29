@@ -1,4 +1,3 @@
-from torch.fx.proxy import Scope
 from transformers import pipeline
 
 modelo = pipeline("fill-mask")
