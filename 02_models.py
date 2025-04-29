@@ -20,7 +20,7 @@ for dict_models in models:
     model_token = dict_models['token']
     print(f"Model: {model_name}")
     model = pipeline('fill-mask', model=model_name)
-    frase = f"Esse documento é essencial para {model_token}."
+    frase = f"Esse documento é essencial para a {model_token}."
     predicoes = model(frase)
     for predicao in predicoes:
         resposta = predicao['token_str']
@@ -28,3 +28,5 @@ for dict_models in models:
         frase = predicao['sequence']
         score_ajustado = score * 100
         print(f"Resposta: {resposta} | Score: {score_ajustado:.2f}% | Frase: {frase}")
+    input('Aperte enter para continuar -> ')
+    print('\n')
